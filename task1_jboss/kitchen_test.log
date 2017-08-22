@@ -4,26 +4,28 @@
        ==> default: Forcing shutdown of VM...
        ==> default: Destroying VM and associated drives...
        Vagrant instance <default-sbeliakou-centos-73-x86-64-minimal> destroyed.
-       Finished destroying <default-sbeliakou-centos-73-x86-64-minimal> (0m4.29s).
+       Finished destroying <default-sbeliakou-centos-73-x86-64-minimal> (0m4.68s).
 -----> Testing <default-sbeliakou-centos-73-x86-64-minimal>
 -----> Creating <default-sbeliakou-centos-73-x86-64-minimal>...
        Bringing machine 'default' up with 'virtualbox' provider...
        ==> default: Importing base box 'sbeliakou/centos-7.3-x86_64-minimal'...
        [KProgress: 10%[KProgress: 30%[KProgress: 50%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
        ==> default: Checking if box 'sbeliakou/centos-7.3-x86_64-minimal' is up to date...
-       ==> default: Setting the name of the VM: kitchen-task1_jboss-default-sbeliakou-centos-73-x86-64-minimal_default_1503340820431_54268
-       ==> default: Fixed port collision for 22 => 2222. Now on port 2203.
+       ==> default: Setting the name of the VM: kitchen-task1_jboss-default-sbeliakou-centos-73-x86-64-minimal_default_1503407482170_69253
        ==> default: Clearing any previously set network interfaces...
        ==> default: Preparing network interfaces based on configuration...
            default: Adapter 1: nat
            default: Adapter 2: hostonly
        ==> default: Forwarding ports...
-           default: 22 (guest) => 2203 (host) (adapter 1)
+           default: 22 (guest) => 2222 (host) (adapter 1)
        ==> default: Booting VM...
        ==> default: Waiting for machine to boot. This may take a few minutes...
-           default: SSH address: 127.0.0.1:2203
+           default: SSH address: 127.0.0.1:2222
            default: SSH username: vagrant
            default: SSH auth method: private key
+           default: Warning: Connection reset. Retrying...
+           default: Warning: Remote connection disconnect. Retrying...
+           default: Warning: Connection reset. Retrying...
            default: 
            default: Vagrant insecure key detected. Vagrant will automatically replace
            default: this with a newly generated keypair for better security.
@@ -35,13 +37,15 @@
        ==> default: Checking for guest additions in VM...
        ==> default: Setting hostname...
        ==> default: Configuring and enabling network interfaces...
-           default: SSH address: 127.0.0.1:2203
+           default: SSH address: 127.0.0.1:2222
            default: SSH username: vagrant
            default: SSH auth method: private key
+       ==> default: Mounting shared folders...
+           default: /tmp/rpms => /home/student/workspace/chef/Task1_community/cookbooks/task1_jboss/rpms
        ==> default: Machine not provisioned because `--no-provision` is specified.
        [SSH] Established
        Vagrant instance <default-sbeliakou-centos-73-x86-64-minimal> created.
-       Finished creating <default-sbeliakou-centos-73-x86-64-minimal> (1m5.95s).
+       Finished creating <default-sbeliakou-centos-73-x86-64-minimal> (1m10.38s).
 -----> Converging <default-sbeliakou-centos-73-x86-64-minimal>...
        Preparing files for transfer
        Preparing dna.json
@@ -49,38 +53,12 @@
        Removing non-cookbook files before transfer
        Preparing validation.pem
        Preparing client.rb
------> Installing Chef Omnibus (install only if missing)
-       Downloading https://omnitruck.chef.io/install.sh to file /tmp/install.sh
+-----> Installing Chef Omnibus (13.3.42)
+       Downloading file:///tmp/rpms/chef_client.sh to file /tmp/install.sh
        Trying wget...
+       Trying curl...
        Download complete.
-       el 7 x86_64
-       Getting information for chef stable  for el...
-       downloading https://omnitruck.chef.io/stable/chef/metadata?v=&p=el&pv=7&m=x86_64
-         to file /tmp/install.sh.10419/metadata.txt
-       trying wget...
-       sha1	d3d26412b6304c92f72749d00e62e0191ceada05
-       sha256	fe051b504856a74ccce1fd23ff92c296506cb8292a3933c71069ae915e7a4a00
-       url	https://packages.chef.io/files/stable/chef/13.3.42/el/7/chef-13.3.42-1.el7.x86_64.rpm
-       version	13.3.42
-       downloaded metadata file looks valid...
-       downloading https://packages.chef.io/files/stable/chef/13.3.42/el/7/chef-13.3.42-1.el7.x86_64.rpm
-         to file /tmp/install.sh.10419/chef-13.3.42-1.el7.x86_64.rpm
-       trying wget...
-       Comparing checksum with sha256sum...
-       
-       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-       
-       You are installing an omnibus package without a version pin.  If you are installing
-       on production servers via an automated process this is DANGEROUS and you will
-       be upgraded without warning on new releases, even to new major releases.
-       Letting the version float is only appropriate in desktop, test, development or
-       CI/CD environments.
-       
-       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-       
-       Installing chef 
-       installing with rpm...
-       warning: /tmp/install.sh.10419/chef-13.3.42-1.el7.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+       warning: /tmp/rpms/chef-13.3.42-1.el7.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
        Preparing...                                                            (100%)#                                 (100%)##                                (100%)###                               (100%)####                              (100%)#####                             (100%)######                            (100%)#######                           (100%)########                          (100%)#########                         (100%)##########                        (100%)###########                       (100%)############                      (100%)#############                     (100%)##############                    (100%)###############                   (100%)################                  (100%)#################                 (100%)##################                (100%)###################               (100%)####################              (100%)#####################             (100%)######################            (100%)#######################           (100%)########################          (100%)#########################         (100%)##########################        (100%)###########################       (100%)############################      (100%)#############################     (100%)##############################    (100%)###############################   (100%)################################  (100%)################################# (100%)################################# [100%]
        Updating / installing...
           1:chef-13.3.42-1.el7                                                 (  1%)#                                 (  4%)##                                (  7%)###                               ( 10%)####                              ( 13%)#####                             ( 16%)######                            ( 19%)#######                           ( 22%)########                          ( 25%)#########                         ( 28%)##########                        ( 31%)###########                       ( 34%)############                      ( 37%)#############                     ( 40%)##############                    ( 43%)###############                   ( 46%)################                  ( 49%)#################                 ( 52%)##################                ( 54%)###################               ( 57%)####################              ( 60%)#####################             ( 63%)######################            ( 66%)#######################           ( 69%)########################          ( 72%)#########################         ( 75%)##########################        ( 78%)###########################       ( 81%)############################      ( 84%)#############################     ( 87%)##############################    ( 90%)###############################   ( 93%)################################  ( 96%)################################# ( 99%)################################# [100%]
@@ -88,17 +66,17 @@
        Transferring files to <default-sbeliakou-centos-73-x86-64-minimal>
        Starting Chef Client, version 13.3.42
        Creating a new client identity for default-sbeliakou-centos-73-x86-64-minimal using the validator key.
-       resolving cookbooks for run list: ["java", "task1_jboss::default"]
+       resolving cookbooks for run list: ["java", "task1_jboss::default", "task1_jboss::deploy"]
        Synchronizing Cookbooks:
          - task1_jboss (0.1.0)
          - java (1.50.0)
          - apt (6.1.3)
-         - ohai (5.2.0)
          - homebrew (4.2.0)
          - windows (3.1.2)
+         - ohai (5.2.0)
        Installing Cookbook Gems:
        Compiling Cookbooks...
-       Converging 12 resources
+       Converging 18 resources
        Recipe: java::notify
          * log[jdk-version-changed] action nothing (skipped due to action :nothing)
        Recipe: java::openjdk
@@ -160,14 +138,16 @@
          * template[/etc/profile.d/jdk.sh] action create
            - create new file /etc/profile.d/jdk.sh
            - update content in file /etc/profile.d/jdk.sh from none to 7f8009
-           --- /etc/profile.d/jdk.sh	2017-08-21 19:42:28.629669776 +0100
-           +++ /etc/profile.d/.chef-jdk20170821-11924-m93hfl.sh	2017-08-21 19:42:28.629669776 +0100
+           --- /etc/profile.d/jdk.sh	2017-08-22 14:14:27.374526650 +0100
+           +++ /etc/profile.d/.chef-jdk20170822-12116-1louf5b.sh	2017-08-22 14:14:27.374526650 +0100
            @@ -1 +1,2 @@
            +export JAVA_HOME=/usr/lib/jvm/java-1.8.0
            - change mode from '' to '0755'
        Recipe: task1_jboss::default
          * yum_package[unzip] action install
            - install version 6.0-16.el7 of package unzip
+         * yum_package[net-tools] action install
+           - install version 2.0-0.17.20131004git.el7 of package net-tools
          * remote_file[wildfly-10.1.0.Final.zip] action create
            - create new file wildfly-10.1.0.Final.zip
            - update content in file wildfly-10.1.0.Final.zip from none to 1e10c8
@@ -175,8 +155,8 @@
          * template[/etc/systemd/system/wildfly.service] action create
            - create new file /etc/systemd/system/wildfly.service
            - update content in file /etc/systemd/system/wildfly.service from none to 238ff1
-           --- /etc/systemd/system/wildfly.service	2017-08-21 19:42:56.029883886 +0100
-           +++ /etc/systemd/system/.chef-wildfly20170821-11924-1r26clz.service	2017-08-21 19:42:56.029883886 +0100
+           --- /etc/systemd/system/wildfly.service	2017-08-22 14:28:42.413291931 +0100
+           +++ /etc/systemd/system/.chef-wildfly20170822-12116-kzok8i.service	2017-08-22 14:28:42.413291931 +0100
            @@ -1 +1,10 @@
            +[Unit]
            +Description=Wildfly
@@ -188,7 +168,7 @@
            +[Install]
            +WantedBy=multi-user.target
          * bash[Install WildFly] action run
-           - execute "bash"  "/tmp/chef-script20170821-11924-cg639a"
+           - execute "bash"  "/tmp/chef-script20170822-12116-tx0bba"
          * remote_file[/opt/wildfly/standalone/deployments/sample.war] action create
            - create new file /opt/wildfly/standalone/deployments/sample.war
            - update content in file /opt/wildfly/standalone/deployments/sample.war from none to 89b33c
@@ -197,11 +177,24 @@
            - enable service service[wildfly]
          * service[wildfly] action start
            - start service service[wildfly]
+         * bash[Wait for WildFly to boot] action run
+           - execute "bash"  "/tmp/chef-script20170822-12116-syu19n"
+       Recipe: task1_jboss::deploy
+         * remote_file[HelloWorldWebApp.zip] action create
+           - create new file HelloWorldWebApp.zip
+           - update content in file HelloWorldWebApp.zip from none to 24fe18
+           (new content is binary, diff output suppressed)
+         * bash[Deploy App] action run
+           - execute "bash"  "/tmp/chef-script20170822-12116-1jhzjms"
+         * service[wildfly] action restart
+           - restart service service[wildfly]
+         * bash[Wait for WildFly to boot] action run
+           - execute "bash"  "/tmp/chef-script20170822-12116-yk51zu"
        
        Running handlers:
        Running handlers complete
-       Chef Client finished, 13/15 resources updated in 01 minutes 30 seconds
-       Finished converging <default-sbeliakou-centos-73-x86-64-minimal> (2m0.60s).
+       Chef Client finished, 19/21 resources updated in 17 minutes 08 seconds
+       Finished converging <default-sbeliakou-centos-73-x86-64-minimal> (17m39.40s).
 -----> Setting up <default-sbeliakou-centos-73-x86-64-minimal>...
        Finished setting up <default-sbeliakou-centos-73-x86-64-minimal> (0m0.00s).
 -----> Verifying <default-sbeliakou-centos-73-x86-64-minimal>...
@@ -209,7 +202,7 @@
 
 Profile: tests from test/smoke/default
 Version: (not specified)
-Target:  ssh://vagrant@127.0.0.1:2203
+Target:  ssh://vagrant@127.0.0.1:2222
 
 
   User root
@@ -220,14 +213,19 @@ Target:  ssh://vagrant@127.0.0.1:2203
 [38;5;41m     ✔  should be enabled[0m
 [38;5;41m     ✔  should be running[0m
   Port 8080
-[38;5;247m     ↺  [0m
+[38;5;41m     ✔  should be listening[0m
+  http GET
+[38;5;41m     ✔  on http://192.168.56.103:8080 status should eq 200[0m
+  http GET
+[38;5;41m     ✔  on http://192.168.56.103:8080/helloworld/hi.jsp status should eq 200[0m
+[38;5;41m     ✔  on http://192.168.56.103:8080/helloworld/hi.jsp body should match /Hello, World/i[0m
 
-Test Summary: [38;5;41m4 successful[0m, [38;5;9m0 failures[0m, [38;5;247m1 skipped[0m
-       Finished verifying <default-sbeliakou-centos-73-x86-64-minimal> (0m5.16s).
+Test Summary: [38;5;41m8 successful[0m, [38;5;9m0 failures[0m, [38;5;247m0 skipped[0m
+       Finished verifying <default-sbeliakou-centos-73-x86-64-minimal> (0m4.11s).
 -----> Destroying <default-sbeliakou-centos-73-x86-64-minimal>...
        ==> default: Forcing shutdown of VM...
        ==> default: Destroying VM and associated drives...
        Vagrant instance <default-sbeliakou-centos-73-x86-64-minimal> destroyed.
-       Finished destroying <default-sbeliakou-centos-73-x86-64-minimal> (0m5.85s).
-       Finished testing <default-sbeliakou-centos-73-x86-64-minimal> (3m21.86s).
------> Kitchen is finished. (3m23.41s)
+       Finished destroying <default-sbeliakou-centos-73-x86-64-minimal> (0m4.08s).
+       Finished testing <default-sbeliakou-centos-73-x86-64-minimal> (19m2.66s).
+-----> Kitchen is finished. (19m4.17s)

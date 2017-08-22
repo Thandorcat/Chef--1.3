@@ -6,6 +6,8 @@
 
 package 'unzip'
 
+package 'net-tools'
+
 remote_file 'wildfly-10.1.0.Final.zip' do
   source 'http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip'
   action :create
@@ -19,7 +21,6 @@ bash "Install WildFly" do
   code <<-SHELL
   unzip wildfly-10.1.0.Final.zip -d /opt
   mv /opt/wildfly-10.1.0.Final /opt/wildfly
-  sed -i 's;127.0.0.1;192.168.56.103;g' /opt/wildfly/standalone/configuration/standalone.xml
   SHELL
 end
 
@@ -33,3 +34,8 @@ service 'wildfly' do
   action [:enable, :start]
 end
 
+bash "Wait for WildFly to boot" do
+  code <<-SHELL
+  sleep 30
+  SHELL
+end

@@ -23,6 +23,16 @@ describe service('wildfly') do
 
 # This is an example test, replace it with your own test.
 
-describe port(8080), :skip do
+describe port(8080) do
   it { should be_listening }
+end
+
+
+describe http('http://192.168.56.103:8080') do
+  its('status') { should eq 200 }
+end
+
+describe http('http://192.168.56.103:8080/helloworld/hi.jsp') do
+  its('status') { should eq 200 }
+  its('body') { should match /Hello, World/i }
 end
